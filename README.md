@@ -1,4 +1,4 @@
-# StudentInformationSystemAPI
+# Student Information System-API
 This project is intended to implement a Student API (BackEnd).
 The Api provides resources as indicated in the implemented feature section below.
 
