@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,9 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("home")
 public class StudentController {
 	@Autowired
-	StudentRepository studentRepo;
-	
-	@Autowired
 	StudentService studentService;
 	
 	
@@ -32,9 +28,8 @@ public class StudentController {
 	}
 	
 	@GetMapping("/student")
-	public List<Student> displayAllStudents(Model model) {
+	public List<Student> displayAllStudents() {
 		List<Student> studentList = studentService.fetchAllStudents();
-		model.addAttribute("students", studentList);
 		return studentList;
 	}
 	
