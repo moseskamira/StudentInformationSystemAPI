@@ -6,7 +6,12 @@ The API provides resources as indicated in the implemented feature section below
 - Spring Boot with Java.
 - H2 in memory database with JpaRepository.
 
-## Implemented features (EndPoints)
+## Project Development Objectives
+- To Test the understanding of Spring Boot Framework.
+- To Test the use of H2 - in memory database.
+- To Test the understanding of JpaRepository.
+
+## Implemented Features (EndPoints)
 - Registering a student. EndPoint: /home/student (Method: POST)
 - Fetching All registered students. EndPoint: /home/student (method: GET)
 - Fetching a single student by studentNumber. EndPoint: /home/student/{studentNumber} (method: GET)
@@ -14,12 +19,13 @@ The API provides resources as indicated in the implemented feature section below
 - Deleting a student from the system. EndPoint: /home/student/{studentNumber} (method: DELETE)
 - Sort students as to gender. EndPoint: home/gender/{gender} (method: GET)
 
-## How to Test the API
+## How To Test The API
 ### Locally
-- clone the repository onto your machine via the link: https://github.com/moseskamira/StudentApi.git
+- clone the repository onto your machine via the link: https://github.com/moseskamira/StudentInformationSystemAPI.git
 - Open the project in any IDE of your choice preferably STS and run.
 - Open any client of your choice preferable PostMan
 - Test each EndPoint by supplying it with data in JSON format. E.g<br/>
+
  {
         "studentNumber": 1214,<br>
         "studentName": "Joan Dash", <br/>
@@ -28,16 +34,20 @@ The API provides resources as indicated in the implemented feature section below
         "studentDateOfBirth": "20-April-1998",<br/>
         "programmeName": "Software Engineering"<br/>
     }
-    
-### Online
-- Access the API via the link: https://student-info-api.herokuapp.com
-- Append an appropriate EndPoint to the Heroku link.
-- You can use PostMan or any other client of your choice to supply the API with data as indicated above.
 
-## Hosted API Link:
-- Heroku Link: https://student-info-api.herokuapp.com
+## Displaying Database Tables With Contained Data
+- Run the application
+- Post data to the EndPoint as indicated above.
+- Open a browser of your choice and load the url: http://localhost:8080/h2-console
+- A dialog shall be displayed.
+- Set the JDBC URL value to: jdbc:h2:mem:testdb
+- Set the User Name field value to: sa
+- Click connect and the database table (STUDENT)shall be displayed.
+- Perform any query of your choice.
+
+## NOTE:
+- This API was not hosted since its implementation was intended to testing in-memory database(H2).
 
 
-## Future Implementation
 
 
